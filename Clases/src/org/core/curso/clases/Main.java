@@ -7,10 +7,21 @@ public class Main {
 		
 		//test1();
 		//test2();
-		test3();
+		//test3();
+		test4();
 		
 		System.out.println("END PROGRAM");
 
+	}
+
+	private static void test4() {
+		// TODO Auto-generated method stub
+		Directivo directivo1 = new Directivo();
+		Directivo directivo2 = new Directivo("Sergio", 25, "werrwer", 50000.12, "Encargado");
+		directivo1.mostrar();
+		directivo1.calcularSueldoNeto();
+		directivo2.mostrar();
+		directivo2.calcularSueldoNeto();
 	}
 
 	private static void test3() {
