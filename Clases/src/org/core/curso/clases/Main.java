@@ -39,9 +39,9 @@ public class Main {
 		int spentAmmunition = 0;
 		int roundCounter = 1;
 		// TODO Auto-generated method stub
-		TankBis tank1 = new TankBis("Primera Division", "Leo", "Tiger", 60, 20);
+		TankBis tank1 = new TankBis("Primera Division", "Leo", "Tiger", 23, 24);
 		System.out.println(tank1.toString());
-		SoldierBis soldier1 = new SoldierBis("Segunda Division", "Cesar", 20 ,50, "Cabo", 18);
+		SoldierBis soldier1 = new SoldierBis("Segunda Division", "Cesar", 24, 24, "Cabo", 18);
 		System.out.println(soldier1.toString());
 
 		// Primera ronda
@@ -60,18 +60,22 @@ public class Main {
 			//
 			roundCounter++; // para que encada ronda valla aumentando
 		} while ((tank1.getArmor() >= 0 && soldier1.getArmor() >= 0)
-				&& ((tank1.getAmmo() > 0) || (soldier1.getAmmo() > 0 )));
-		if (tank1.getArmor() >= 0) {
-			System.out.println("Hagamos un funeral por" + soldier1.getName());
-			System.out.println("Ganador: " + tank1.getName());
-		} else {
-			if (soldier1.getArmor() >= 0) {
-				System.out.println("Llevemos a la chatarra a" + tank1.getName());
-				System.out.println("Ganador: " + soldier1.getName());
-			} else {
-				System.out.println("LOS DOS HAN PERDIDO!!!");
-			}
+				&& ((tank1.getAmmo() > 0) || (soldier1.getAmmo() > 0)));
 
+		if (((tank1.getAmmo() <= 0) && (soldier1.getAmmo() >= 0))
+				|| ((tank1.getArmor() <= 0) && (soldier1.getArmor() <= 0))) {
+			System.out.println("LOS DOS HAN PERDIDO!!!");
+
+		} else {
+			if (tank1.getArmor() >= 0) {
+				System.out.println("Hagamos un funeral por " + soldier1.getName());
+				System.out.println("Ganador: " + tank1.getName());
+			} else {
+				if (soldier1.getArmor() >= 0) {
+					System.out.println("Llevemos a la chatarra a " + tank1.getName());
+					System.out.println("Ganador: " + soldier1.getName());
+				}
+			}
 		}
 	}
 

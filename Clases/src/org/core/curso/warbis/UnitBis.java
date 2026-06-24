@@ -23,7 +23,7 @@ public abstract class UnitBis {
 	}
 
 	public int move() {
-		return random.nextInt(30);
+		return random.nextInt(20);
 	}
 	// CONSTRUCTOR
 
