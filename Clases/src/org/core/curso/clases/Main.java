@@ -76,6 +76,7 @@ public class Main {
 		}
 		//System.out.println("personaSet");
 		
+		// ejemplo del map
 		Map<Long, Persona> personaMap = new HashMap<Long, Persona>();
 		personaMap.put(1L, new Persona("Pepe", 25, "ABC"));
 		personaMap.put(2L, new Persona("Ana", 26, "DEF"));
