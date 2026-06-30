@@ -1,6 +1,8 @@
 
 package org.core.curso.clases;
 
+import java.util.Objects;
+
 public class Persona extends Object {
 
 	private String nombre;
@@ -47,7 +49,8 @@ public class Persona extends Object {
 
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", edad=" + edad + ", password=" + getPassword() + "]";
+		return "Persona [nombre=" + nombre + ", edad=" + edad + ", password=" + getPassword() 
+		+ " ]" + super.toString() + "]";
 
 	}
 
@@ -63,6 +66,7 @@ public class Persona extends Object {
 		return edad;
 	}
 
+
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
@@ -77,4 +81,22 @@ public class Persona extends Object {
 		System.out.println("Para cambiar la password hable con el administrador");
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(Integer.valueOf(edad), nombre);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return edad == other.edad 
+		        && nombre.equalsIgnoreCase(other.nombre)
+		        && Objects.equals(password, other.password);
+	}
 }

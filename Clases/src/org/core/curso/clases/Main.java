@@ -1,5 +1,13 @@
 package org.core.curso.clases;
 
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.core.curso.device.Computer;
 import org.core.curso.device.Laptop;
 import org.core.curso.device.Mobile;
@@ -11,6 +19,8 @@ import org.core.curso.war.Soldier;
 import org.core.curso.war.Tank;
 import org.core.curso.warbis.SoldierBis;
 import org.core.curso.warbis.TankBis;
+
+
 
 public class Main {
 
@@ -27,12 +37,75 @@ public class Main {
 		// test8();
 		// test9();
 		// test10();
-		test11();
-
+		// test11();
+		// test12();
+		collection();
 		// ejercicio de la pag 125
 
 		System.out.println("END PROGRAM");
 
+	}
+// los sets no cuardan duplicados ejemplo dejamos solo nombre edad y contraseña
+	private static void collection() {
+		Set<Persona> personaSet = new HashSet<Persona>();
+		personaSet.add(new Persona("Pepe", 25, "ABC"));
+		personaSet.add(new Persona("Ana", 26, "DEF"));
+		personaSet.add(new Persona("Elsa", 27, "GHI"));
+		personaSet.add(new Persona("Luis", 28, "JKL"));
+		personaSet.add(new Persona("Pepe", 25, "ABC"));
+		personaSet.add(new Persona("Pepe", 25, "ABCD"));
+		personaSet.add(new Persona("Pepe", 26, "ABC"));
+		System.out.println("\nContenido del HashSet");
+		for(Persona persona : personaSet) {
+			System.out.println(persona);
+		}
+		//System.out.println("personaSet");
+		//Arraylist si muestra en el orden de insercion forzadamente ejemplo
+		
+		List<Persona> personaList = new ArrayList<Persona>();
+		personaList.add(new Persona("Pepe", 25, "ABC"));
+		personaList.add(new Persona("Ana", 26, "DEF"));
+		personaList.add(new Persona("Elsa", 27, "GHI"));
+		personaList.add(new Persona("Luis", 28, "JKL"));
+		personaList.add(new Persona("Pepe", 25, "ABC"));
+		personaList.add(new Persona("Pepe", 25, "ABCD"));
+		personaList.add(new Persona("Pepe", 26, "ABC"));
+		System.out.println("\nContenido del ArrayList");
+		for(Persona persona : personaList) {
+			System.out.println(persona);
+		}
+		//System.out.println("personaSet");
+		
+		Map<Long, Persona> personaMap = new HashMap<Long, Persona>();
+		personaMap.put(1L, new Persona("Pepe", 25, "ABC"));
+		personaMap.put(2L, new Persona("Ana", 26, "DEF"));
+		personaMap.put(3L, new Persona("Elsa", 27, "GHI"));
+		personaMap.put(4L, new Persona("Luis", 28, "JKL"));
+		personaMap.put(5L, new Persona("Pepe", 25, "ABC"));
+		personaMap.put(6L, new Persona("Pepe", 25, "ABCD"));
+		personaMap.put(7L, new Persona("Pepe", 26, "ABC"));
+		System.out.println("\nContenido del HashMap");
+		for(Persona persona : personaMap.values()) {
+			System.out.println(persona);
+		}
+		for (Map.Entry<Long, Persona> entry : personaMap.entrySet()) {
+			System.out.println("Clave: " + entry.getKey()
+			+ " Valor: " + entry.getValue());
+		}
+	
+
+	}
+
+	private static void test12() {
+		// TODO Auto-generated method stub
+		Persona persona1 = new Persona("pepe", 35, "DEF");
+		Persona persona2 = new Persona("PEPE", 35, "DEF");
+
+		if (persona1 == persona2) {
+			System.out.println("Con == son el mismo objeto:");
+		} else {
+			System.out.println("Con == No son el mismo objeto:");
+		}
 	}
 
 	private static void test11() {
@@ -187,9 +260,33 @@ public class Main {
 	}
 
 	public static void test1() {
-		Persona persona1 = new Persona("Jose Gonzales", 51, "JOSE");
+		Persona persona1 = new Persona("Juan Perez", 35, "JUAN");
 		Persona persona2 = new Persona("Juan Perez", 35, "JUAN");
-		Persona persona3 = new Persona("Ana Sanz");
+
+		if (persona1 == persona2) {
+			System.out.println("Con == son el mismo objeto:");
+		} else {
+			System.out.println("Con == No son el mismo objeto:");
+		}
+		System.out.println(persona1.toString());
+		System.out.println(persona2.toString());
+		//
+		if (persona1.equals(persona2)) {
+			System.out.println("Con equlas de object: El contenido de ambos" + "objetos No es el mismo:");
+			System.out.println(persona1.toString());
+			System.out.println(persona2.toString());
+			//
+		}
+
+		Persona persona3 = persona1;
+		if (persona1 == persona3) {
+			System.out.println("Con == son el mismo objeto:");
+		} else {
+			System.out.println("Con == No son el mismo objeto:");
+		}
+		System.out.println(persona1.toString());
+		System.out.println(persona3.toString());
+
 		Persona persona4 = new Persona(27);
 		Persona persona5 = new Persona();
 
