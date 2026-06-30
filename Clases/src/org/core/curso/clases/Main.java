@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.StringTokenizer;
 
 import org.core.curso.device.Computer;
 import org.core.curso.device.Laptop;
@@ -19,6 +20,7 @@ import org.core.curso.war.Soldier;
 import org.core.curso.war.Tank;
 import org.core.curso.warbis.SoldierBis;
 import org.core.curso.warbis.TankBis;
+
 
 
 
@@ -39,12 +41,29 @@ public class Main {
 		// test10();
 		// test11();
 		// test12();
-		collection();
+		// collection();
+		tokenizer();
 		// ejercicio de la pag 125
 
 		System.out.println("END PROGRAM");
 
 	}
+
+	private static void tokenizer() {
+		String text = "En un lugar de la mancha";
+		StringTokenizer tokensArray = new StringTokenizer(text);
+		System.out.println("Tokenizado al teto: " + text);
+		while (tokenizer.hashMoreTokens()) {
+			System.out.println("\t" + tokenizer.nextToken());
+		}
+		
+		String JusteatText = "Pepe: Perez:calle pez 13: te oriental: arroz 3 delcias: sushi");
+		StringTokenizer justeatTokenizer = new StringTokenizer(justeatText, ":");
+		System.out.println("Tokenizando mi cena: " + justeatTexxt);
+		while (tokenizer.hashMoreTokens()) {
+			System.out.println("\t" + tokenizer.nextToken());
+		}
+
 // los sets no cuardan duplicados ejemplo dejamos solo nombre edad y contraseña
 	private static void collection() {
 		Set<Persona> personaSet = new HashSet<Persona>();
@@ -56,12 +75,12 @@ public class Main {
 		personaSet.add(new Persona("Pepe", 25, "ABCD"));
 		personaSet.add(new Persona("Pepe", 26, "ABC"));
 		System.out.println("\nContenido del HashSet");
-		for(Persona persona : personaSet) {
+		for (Persona persona : personaSet) {
 			System.out.println(persona);
 		}
-		//System.out.println("personaSet");
-		//Arraylist si muestra en el orden de insercion forzadamente ejemplo
-		
+		// System.out.println("personaSet");
+		// Arraylist si muestra en el orden de insercion forzadamente ejemplo
+
 		List<Persona> personaList = new ArrayList<Persona>();
 		personaList.add(new Persona("Pepe", 25, "ABC"));
 		personaList.add(new Persona("Ana", 26, "DEF"));
@@ -71,11 +90,11 @@ public class Main {
 		personaList.add(new Persona("Pepe", 25, "ABCD"));
 		personaList.add(new Persona("Pepe", 26, "ABC"));
 		System.out.println("\nContenido del ArrayList");
-		for(Persona persona : personaList) {
+		for (Persona persona : personaList) {
 			System.out.println(persona);
 		}
-		//System.out.println("personaSet");
-		
+		// System.out.println("personaSet");
+
 		// ejemplo del map
 		Map<Long, Persona> personaMap = new HashMap<Long, Persona>();
 		personaMap.put(1L, new Persona("Pepe", 25, "ABC"));
@@ -86,14 +105,12 @@ public class Main {
 		personaMap.put(6L, new Persona("Pepe", 25, "ABCD"));
 		personaMap.put(7L, new Persona("Pepe", 26, "ABC"));
 		System.out.println("\nContenido del HashMap");
-		for(Persona persona : personaMap.values()) {
+		for (Persona persona : personaMap.values()) {
 			System.out.println(persona);
 		}
 		for (Map.Entry<Long, Persona> entry : personaMap.entrySet()) {
-			System.out.println("Clave: " + entry.getKey()
-			+ " Valor: " + entry.getValue());
+			System.out.println("Clave: " + entry.getKey() + " Valor: " + entry.getValue());
 		}
-	
 
 	}
 
