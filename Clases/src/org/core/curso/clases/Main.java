@@ -2,6 +2,7 @@ package org.core.curso.clases;
 
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -24,10 +25,12 @@ import org.core.curso.warbis.TankBis;
 
 
 
+
 public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("START PROGRAM");
+		
 
 		// test1();
 		// test2();
@@ -42,28 +45,30 @@ public class Main {
 		// test11();
 		// test12();
 		// collection();
-		tokenizer();
+		//tokenizer();
+		
+
 		// ejercicio de la pag 125
 
 		System.out.println("END PROGRAM");
-
 	}
+
 
 	private static void tokenizer() {
 		String text = "En un lugar de la mancha";
-		StringTokenizer tokensArray = new StringTokenizer(text);
+		StringTokenizer tokenizer = new StringTokenizer(text);
 		System.out.println("Tokenizado al teto: " + text);
-		while (tokenizer.hashMoreTokens()) {
+		while (tokenizer.hasMoreTokens()) {
 			System.out.println("\t" + tokenizer.nextToken());
 		}
 		
-		String JusteatText = "Pepe: Perez:calle pez 13: te oriental: arroz 3 delcias: sushi");
+		String justeatText = "Pepe: Perez:calle pez 13: te oriental: arroz 3 delcias: sushi";
 		StringTokenizer justeatTokenizer = new StringTokenizer(justeatText, ":");
-		System.out.println("Tokenizando mi cena: " + justeatTexxt);
-		while (tokenizer.hashMoreTokens()) {
-			System.out.println("\t" + tokenizer.nextToken());
+		System.out.println("Tokenizando mi cena: " + justeatText);
+		while (justeatTokenizer.hasMoreTokens()) {
+			System.out.println("\t" + justeatTokenizer.nextToken());
 		}
-
+	}
 // los sets no cuardan duplicados ejemplo dejamos solo nombre edad y contraseña
 	private static void collection() {
 		Set<Persona> personaSet = new HashSet<Persona>();
